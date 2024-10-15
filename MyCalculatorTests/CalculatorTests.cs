@@ -65,5 +65,35 @@ namespace MyCalculatorTests
             // Assert
             Assert.AreEqual(5, result);
         }
+
+        public void DivideNeg_ReturnsCorrectResult()
+        {
+
+            // Arrange
+            var calculator = new Calculator();
+            double a = -10;
+            double b = -2;
+
+            // Act
+            double result = calculator.Divide(a, b);
+
+            // Assert
+            Assert.AreEqual(5, result);
+        }
+
+        public void DividePosByNeg_ReturnsCorrectResult()
+        {
+
+            // Arrange
+            var calculator = new Calculator();
+            double a = 10;
+            double b = -2;
+
+            // Act
+            double result = calculator.Divide(a, b);
+
+            // Assert
+            Assert.AreEqual(-5, result);
+        }
     }
 }
