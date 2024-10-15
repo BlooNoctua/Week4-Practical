@@ -16,6 +16,14 @@
         }
         public double Divide(double a, double b)
         {
+            try
+            {
+                return a / b;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine($"Cannot divide by zero. {ex.Message}");
+            }
             return a / b;
         }
     }

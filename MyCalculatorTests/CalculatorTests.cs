@@ -66,6 +66,7 @@ namespace MyCalculatorTests
             Assert.AreEqual(5, result);
         }
 
+        [TestMethod]
         public void DivideNeg_ReturnsCorrectResult()
         {
 
@@ -81,6 +82,7 @@ namespace MyCalculatorTests
             Assert.AreEqual(5, result);
         }
 
+        [TestMethod]
         public void DividePosByNeg_ReturnsCorrectResult()
         {
 
@@ -94,6 +96,30 @@ namespace MyCalculatorTests
 
             // Assert
             Assert.AreEqual(-5, result);
+        }
+
+        [TestMethod]
+        public void DivideByZero_ReturnsCorrectResult()
+        {
+
+            // Arrange
+            var calculator = new Calculator();
+            double a = 10;
+            double b = 0;
+
+            // Act
+     
+            try
+            {
+                double result = calculator.Divide(a, b);
+            }
+            catch (DivideByZeroException ex) {
+
+                Assert.AreEqual("Cannot divide by zero.", ex.Message);
+
+            }
+            // Assert
+            
         }
     }
 }
